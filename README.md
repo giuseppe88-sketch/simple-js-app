@@ -4,7 +4,7 @@ Whitin this project I build a web application whit HTML, CSS and JS that load fr
 
 
 
----------------------------------Project Dependencies------------------------------------------
+---------------------------------Project Dependencies---------------------------------------
 The app is built using ECMAScript2015(ES6)
 
 
