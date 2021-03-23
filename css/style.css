@@ -1,0 +1,21 @@
+body{
+  background-color: rgba(172, 164, 164, 0.658);
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: larger;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+
+}
+.header-logo{
+    height: 300px;
+}
+.logo-pokemon{
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+    
+}
