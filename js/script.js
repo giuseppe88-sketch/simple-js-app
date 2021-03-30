@@ -31,26 +31,32 @@ let pokemonRepository= (function(){
     function getAll(){
         return pokemonList
     }
+    function addListItem(pokemon){
+        let listPokemon = document.querySelector(".pokemon-list");
+        let listItem = document.createElement("li")
+         let button = document.createElement("button");
+          button.innerText= pokemon.name ;
+          button.classList.add(".button-class")
+         listPokemon.appendChild(listItem);
+         listItem.appendChild(button);
 
+         button.addEventListener("click",function(event){
+             showDetails(pokemon)
+         });
+        }
+     function showDetails(pokemon){
+         console.log(pokemon.name)
+     }
 
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListItem:addListItem
     }
 
 
 })();
 
-
-
-function loopFunction(user){
-    if(user.height > 1){
-        document.write(`<h1>${user.name}</h1> <p><strong> height:</strong> ${user.height} WOW! Is Bigger then one Meter!</p><br>`)
-    }
-    else{
-        document.write(`<h1>${user.name}</h1> <p><strong> height:</strong> ${user.height} Meter</p> <br>`)
-    }
-}
 
 function findDragon(user){
     if(user.type === "dragon"){
@@ -59,8 +65,11 @@ function findDragon(user){
 }
 
 
-pokemonRepository.getAll().forEach(loopFunction);
+pokemonRepository.getAll().forEach(function(pokemon){
+pokemonRepository.addListItem(pokemon);
+});
+
 
 let dragons=pokemonRepository.getAll().filter(findDragon);
 
-console.log(dragons)
+
