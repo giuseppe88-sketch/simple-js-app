@@ -109,7 +109,7 @@ function returnValue(object){
               item.types = details.types;
               returnValue(details.types);
          }).catch(function(e){
-            hideLOading()
+            hideLOading();
              console.error(e)
          });
      };
