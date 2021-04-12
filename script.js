@@ -55,7 +55,7 @@ let pokemonRepository= (function(){
              showModal(pokemon)
          })
         };
-    
+      //display loading
         function showloading(){
             loader.classList.add("display");
             setTimeout(function(){
@@ -64,7 +64,7 @@ let pokemonRepository= (function(){
         
         };
 
-
+        
         function hideLOading(){
             loader.classList.remove("display");
         }
