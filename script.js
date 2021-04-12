@@ -6,7 +6,6 @@ let pokemonRepository= (function(){
     let pokemon = "";
     let searchInput = document.querySelector("#searchIn");
     let loader= document.querySelector("#loading");
-    
     // defined api key to a variable
     let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     //defines modal container
@@ -35,7 +34,7 @@ let pokemonRepository= (function(){
         listItem.classList.add("list-group-item");
         listItem.classList.add("list-group-item-action");
          let button = document.createElement("button");
-          button.innerText= pokemon.name ;
+          button.innerText= capitalize(pokemon.name);
           button.classList.add("btn");
           button.classList.add("btn-dark");
           button.classList.add("btn-block")
@@ -90,12 +89,15 @@ let pokemonRepository= (function(){
                 console.error(e);
             })
      };
-function returnValue(object){
-    for (let key of Object.keys(object)){
-        let value = object[key].type.name;
-        console.log(value);
+   // creating a function that loop over our object for return value in string essential for display our pokemon types
+  function returnValue(object){
+     for (let key of Object.keys(object)){
+         let value = object[key].type.name;
+         console.log(value);
+         return value
     }
 }
+
      //fetch details pokemon from our API
      function loadDetails(item){
         showloading()
@@ -124,35 +126,40 @@ function returnValue(object){
 
         modalBody.innerHTML= "";
         modalTitle.innerHTML = "";
-
+       // create h1 element for our pokemon name
        let elementTitle = document.createElement("h1");
-        elementTitle.innerText= pokemon.name
+        elementTitle.innerText= capitalize(pokemon.name);
         modalTitle.appendChild(elementTitle);
 
-        
-       let elementHeight = document.createElement("p");
-        elementHeight.innerText =` is ${pokemon.height} meter(s) tall and is a ${pokemon.value}`;
-        modalBody.appendChild(elementHeight);
-
+        //create p element for pokemon height and type
+       let elementHeightType = document.createElement("p");
+        elementHeightType.innerText =` is ${pokemon.height} meter(s) tall and is a ${returnValue(pokemon.types)}`;
+        modalBody.appendChild(elementHeightType);
+        // create image element for pokemon image
         let imageElement = document.createElement("img");
         modalBody.appendChild(imageElement);
         imageElement.src = pokemon.imageUrl;
         imageElement.classList.add("img-element")
 
      }
-     
+     //add event listener to search bar to finding pokemon to the list
      searchInput.addEventListener('input', function(){
         let listPokemon = document.querySelectorAll('.list-group-item');
-        let value = searchInput.value;
+        let value = searchInput.value.toUpperCase();
 
         listPokemon.forEach(function(pokemon){
-            if(pokemon.innerText.indexOf(value) > -1){
+            if(pokemon.innerText.toUpperCase().indexOf(value) > -1){
                 pokemon.style.display = '';
             }else{
                 pokemon.style.display = 'none';
             }
         })
     });
+   // add function to capitalize first letter 
+  function capitalize(s){
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)
+      }
      
      
     return{
