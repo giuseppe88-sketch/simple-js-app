@@ -1,4 +1,4 @@
-PROJECT DESCRIPTION:
+## PROJECT DESCRIPTION:
 
 Whitin this project I build a web application whit HTML, CSS and JS that load from an external API using FETCH and Promises.
 
