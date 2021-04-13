@@ -3,7 +3,7 @@ body{
   margin-top: 20px;
   margin-left: 20px;
   font-size: larger;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: fantasy;
   
 
 }
@@ -49,3 +49,33 @@ body{
     .img-element{
       width: 180px;
     }
+   .content img{
+     width: 30%;
+     margin-top: 70px;
+     animation:moveVertical 2s ease infinite alternate;
+   }
+
+   @keyframes moveVertical {
+    0% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(-16px);
+    }
+  }
+  .content p{
+    margin-top:45px;
+    font-family: fantasy;
+    font-size: larger;
+    font-weight:400;
+  }
+  #nav-pokedex{
+    font-size:30px;
+  }
+ #icon{
+   display: block;
+   margin: 0 auto;
+   color:rgba(185, 185, 240, 0.678);
+   font-size:15px;
+ }
+  
