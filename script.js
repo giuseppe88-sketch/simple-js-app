@@ -38,6 +38,7 @@ let pokemonRepository= (function(){
           button.classList.add("btn");
           button.classList.add("btn-dark");
           button.classList.add("btn-block")
+          button.classList.add("mb-2")
         button.setAttribute("data-target","#pokemonModal")
         button.setAttribute("data-toggle","modal")
          listPokemon.appendChild(listItem);
