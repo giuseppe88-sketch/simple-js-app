@@ -94,7 +94,6 @@ let pokemonRepository= (function(){
   function returnValue(object){
      for (let key of Object.keys(object)){
          let value = object[key].type.name;
-         console.log(value);
          return value
     }
 }
