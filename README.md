@@ -2,7 +2,7 @@
 
 - Within this project I build a web application whit HTML, CSS and JS that load from an external API using FETCH and Promises.
 
-- As a user I want to see a list of Pokemon in my Pokedex and I want to be able, one time select it, display all his details. 
+- As a user I want to see a list of Pokemon in my Pokedex and I want to be able, one time select it, to display all his details. 
 
 ## TECHNOLOGIES USED
 
