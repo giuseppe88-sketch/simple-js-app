@@ -78,4 +78,7 @@ body{
    color:rgba(185, 185, 240, 0.678);
    font-size:15px;
  }
-  
+
+.listItem{
+  text-align: center;
+}
