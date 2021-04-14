@@ -29,13 +29,14 @@ let pokemonRepository= (function(){
   // creates and display items list and button 
     function addListItem(pokemon){
        let listPokemon = document.querySelector(".list-group");
-
+        listPokemon.classList.add()
         let listItem = document.createElement("li");        
         listItem.classList.add("list-group-item");
         listItem.classList.add("list-group-item-action");
+        listItem.classList.add("mb-2")
          let button = document.createElement("button");
           button.innerText= capitalize(pokemon.name);
-          button.classList.add("btn");
+         button.classList.add("btn");
           button.classList.add("btn-dark");
           button.classList.add("btn-block")
         button.setAttribute("data-target","#pokemonModal")
