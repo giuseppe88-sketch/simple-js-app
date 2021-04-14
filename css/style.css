@@ -3,7 +3,7 @@ body{
   margin-top: 20px;
   margin-left: 20px;
   font-size: larger;
-  font-family: fantasy;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   
 
 }
@@ -65,7 +65,7 @@ body{
   }
   .content p{
     margin-top:45px;
-    font-family: fantasy;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: larger;
     font-weight:400;
   }
